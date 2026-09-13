@@ -65,28 +65,3 @@ Real-World Farm Conditions
    Smarter Decisions
 
 
-###✨ Key Features
-🌡️ Real-Time Environmental Monitoring
-
-Monitor important field parameters:
-
-Temperature
-Humidity
-Soil Moisture
-###📱 Farmer-Friendly Mobile Application
-
-The Flutter application provides a simple interface for farmers to view agricultural information without dealing with complex raw data.
-
-###📊 Data Analytics
-
-AgriSense analyzes collected sensor data to identify useful patterns and provide meaningful information for decision-making.
-
-###💧 Automated Irrigation Decision Support
-The system uses soil and environmental conditions to determine whether irrigation may be required.
-
-This helps support:
-
-Better water utilization
-Timely irrigation
-Data-driven decisions
-Reduced unnecessary watering
