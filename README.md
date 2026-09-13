@@ -313,3 +313,94 @@ Visual analytics make it easier to identify changes and patterns over time.
                               ▼
                          👨‍🌾 FARMER
 ```
+# 🔄 Complete System Workflow
+```text
+                         START
+                           │
+                           ▼
+                 🌱 FIELD CONDITIONS
+                           │
+                           ▼
+                   📡 IoT SENSORS
+                           │
+                           ▼
+                        ESP32
+                           │
+                           ▼
+                 📤 DATA TRANSMISSION
+                           │
+                           ▼
+                  🌐 DJANGO BACKEND
+                           │
+                           ▼
+                  💾 DATA PROCESSING
+                           │
+                           ▼
+                    📊 ANALYTICS
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+              ▼            ▼            ▼
+          📈 Trends      🚨 Alerts    💧 Irrigation
+                                      Decision
+              │            │            │
+              └────────────┼────────────┘
+                           │
+                           ▼
+                    📱 FLUTTER APP
+                           │
+                           ▼
+                  👨‍🌾 FARMER
+                           │
+                           ▼
+                  SMART DECISION
+                           │
+                           ▼
+                          END
+```
+# 🧠 Irrigation Decision Flow
+```text
+                    🌱 SOIL MOISTURE
+                           │
+                           ▼
+                ┌────────────────────┐
+                │ Is moisture level  │
+                │       low?         │
+                └─────────┬──────────┘
+                          │
+                    ┌─────┴─────┐
+                   YES          NO
+                    │            │
+                    ▼            ▼
+          Check environmental   Continue
+              conditions       monitoring
+                    │            │
+                    ▼            │
+           💧 Irrigation         │
+             Required?           │
+                    │            │
+              ┌─────┴─────┐      │
+             YES          NO     │
+              │            │     │
+              ▼            ▼     │
+       💧 Recommend      Monitor │
+         Irrigation              │
+              │                  │
+              └────────┬─────────┘
+                       ▼
+                Continue Monitoring
+```
+
+| Category                | Technology                           |
+| ----------------------- | ------------------------------------ |
+| 📱 Mobile Application   | Flutter                              |
+| 💻 Programming Language | Dart                                 |
+| ⚙️ Backend              | Django                               |
+| 🔌 IoT Microcontroller  | ESP32                                |
+| 🌡️ Sensors             | Temperature, Humidity, Soil Moisture |
+| 🌐 Communication        | REST API / HTTP                      |
+| 📊 Data Processing      | Python / Django Backend              |
+| 📈 Visualization        | Flutter Charts                       |
+| 🗄️ Database            | Backend Database                     |
+| 🔧 Development Tools    | VS Code, Android Studio              |
+| 🌐 Version Control      | Git & GitHub                         |
