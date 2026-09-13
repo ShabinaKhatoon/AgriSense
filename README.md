@@ -66,34 +66,250 @@ Real-World Farm Conditions
 
 ```
 
-#✨ Key Features
-🌡️ Real-Time Environmental Monitoring
+# ✨ Key Features
+
+## 🌡️ Real-Time Environmental Monitoring
 
 Monitor important field parameters:
 
-Temperature
-Humidity
-Soil Moisture
+- 🌡️ Temperature
+- 💧 Humidity
+- 🌱 Soil Moisture
 
-#📱 Farmer-Friendly Mobile Application
+---
 
-The Flutter application provides a simple interface for farmers to view agricultural information without dealing with complex raw data.
+## 📱 Farmer-Friendly Mobile Application
 
-#📊 Data Analytics
+The Flutter application provides a simple and intuitive interface for farmers to view agricultural information without dealing with complex raw data.
+
+Farmers can easily access:
+
+- Current field conditions
+- Sensor readings
+- Alerts
+- Analytics
+- Recommendations
+- Irrigation-related information
+
+---
+
+## 📊 Data Analytics
 
 AgriSense analyzes collected sensor data to identify useful patterns and provide meaningful information for decision-making.
 
-#💧 Automated Irrigation Decision Support
-The system uses soil and environmental conditions to determine whether irrigation may be required.
+The analytics system provides:
 
-This helps support:
- Better water utilization
- Timely irrigation
- Data-driven decisions
- Reduced unnecessary watering
+- Average sensor values
+- Minimum and maximum readings
+- Historical trends
+- Number of records
+- Data range
+- Farm health insights
+- Recommendations
 
-Better water utilization
-Timely irrigation
-Data-driven decisions
-Reduced unnecessary watering
+---
 
+## 💧 Automated Irrigation Decision Support
+
+The system uses soil and environmental conditions to support irrigation decisions.
+
+This helps with:
+
+- 💧 Better water utilization
+- ⏱️ Timely irrigation
+- 📊 Data-driven decisions
+- 🌱 Improved crop monitoring
+- ♻️ Reduced unnecessary watering
+
+---
+
+## 🚨 Smart Alerts
+
+AgriSense provides alerts based on agricultural conditions so that important changes can be identified quickly.
+
+Alerts can be categorized according to priority:
+
+- 🟢 Low
+- 🟡 Medium
+- 🟠 High
+- 🔴 Critical
+
+This helps farmers focus on conditions that may require immediate attention.
+
+---
+
+## ❤️ Farm Health Score
+
+AgriSense provides an overall **Farm Health Score** based on the available agricultural data and analysis.
+
+The score gives farmers a simple way to understand the general condition of their farm without manually interpreting every individual sensor reading.
+
+---
+
+## 📈 Data Visualization
+
+Agricultural data is presented using charts and visual representations.
+
+The application helps visualize:
+
+- 🌡️ Temperature trends
+- 💧 Humidity trends
+- 🌱 Soil moisture trends
+
+Visual analytics make it easier to identify changes and patterns over time.
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                         🌱 AGRISENSE
+                              │
+                              ▼
+                    ┌──────────────────┐
+                    │  AGRICULTURAL    │
+                    │      FIELD       │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │   IoT SENSORS    │
+                    │                  │
+                    │ 🌡 Temperature   │
+                    │ 💧 Humidity      │
+                    │ 🌱 Soil Moisture │
+                    └────────┬─────────┘
+                             │
+                             │ Sensor Data
+                             ▼
+                    ┌──────────────────┐
+                    │      ESP32       │
+                    │  Microcontroller │
+                    └────────┬─────────┘
+                             │
+                             │ Data Transmission
+                             ▼
+                    ┌──────────────────┐
+                    │  DJANGO BACKEND  │
+                    │                  │
+                    │ REST APIs        │
+                    │ Data Processing  │
+                    │ Data Storage     │
+                    │ Analytics        │
+                    │ Alerts           │
+                    │ Irrigation Logic │
+                    └────────┬─────────┘
+                             │
+                             │ Processed Data
+                             ▼
+                    ┌──────────────────┐
+                    │   FLUTTER APP    │
+                    │                  │
+                    │ Dashboard        │
+                    │ Monitoring       │
+                    │ Analytics        │
+                    │ Charts           │
+                    │ Recommendations │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                       👨‍🌾 FARMER
+                             │
+                             ▼
+                    SMART FARM DECISIONS
+```
+# 📊 Data Flow Diagram
+### Level 0 Context Diagram
+```text
+
+                         ┌───────────────┐
+                         │    FARMER     │
+                         └───────┬───────┘
+                                 │
+                         Login / Requests
+                                 │
+                                 ▼
+                  ┌──────────────────────────┐
+                  │                          │
+                  │       AGRISENSE          │
+                  │                          │
+                  │ Smart Agriculture        │
+                  │ Monitoring & Analytics   │
+                  │                          │
+                  └────────────┬─────────────┘
+                               │
+                    Insights / Alerts /
+                 Recommendations / Status
+                               │
+                               ▼
+                         ┌───────────────┐
+                         │    FARMER     │
+                         └───────────────┘
+
+
+       Sensor Readings
+             │
+             ▼
+      ┌───────────────┐
+      │ ESP32 + IoT   │
+      │    Sensors    │
+      └───────┬───────┘
+              │
+              │ Temperature
+              │ Humidity
+              │ Soil Moisture
+              ▼
+       ┌───────────────┐
+       │   AGRISENSE   │
+       └───────────────┘
+```
+
+# 📊 DFD — Level 1
+```text
+                         👨‍🌾 FARMER
+                              │
+                              │ Login / Requests
+                              ▼
+                    ┌───────────────────┐
+                    │ 1.0 AUTHENTICATION│
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │  2.0 MONITORING   │
+                    └─────────┬─────────┘
+                              │
+                              │ Request Sensor Data
+                              ▼
+                    ┌───────────────────┐
+                    │ ESP32 + SENSORS   │
+                    └─────────┬─────────┘
+                              │
+                              │ Sensor Readings
+                              ▼
+                    ┌───────────────────┐
+                    │ 3.0 DATA PROCESS  │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │   4.0 ANALYTICS   │
+                    └─────────┬─────────┘
+                              │
+               ┌──────────────┼──────────────┐
+               │              │              │
+               ▼              ▼              ▼
+          📈 Trends        🚨 Alerts      💧 Irrigation
+                                             Decision
+               │              │              │
+               └──────────────┼──────────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ 5.0 MOBILE DISPLAY│
+                    │     FLUTTER       │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                         👨‍🌾 FARMER
+```
